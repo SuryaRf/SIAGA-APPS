@@ -8,10 +8,10 @@ class NavBar extends StatefulWidget {
   final Function(int) onTap;
 
   const NavBar({
-    Key? key,
+    super.key,
     required this.pageIndex,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   _NavBarState createState() => _NavBarState();
@@ -28,7 +28,6 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return Container(
       height: 90,

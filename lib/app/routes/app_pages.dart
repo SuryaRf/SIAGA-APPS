@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
+import 'package:siaga/app/modules/comunitty/views/comunitty_view.dart';
 
+import '../modules/chat_page/bindings/chat_page_binding.dart';
+import '../modules/chat_page/views/chat_page_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/navigation_bar/bindings/navigation_bar_binding.dart';
@@ -8,6 +11,7 @@ import '../modules/navigation_bar/views/navigation_bar_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
+  
   AppPages._();
 
   static const INITIAL = Routes.NAVIGATION_BAR;
@@ -20,8 +24,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.NAVIGATION_BAR,
-      page: () =>  NavigationBarView(),
+      page: () => NavigationBarView(),
       binding: NavigationBarBinding(),
+    ),
+    GetPage(
+      name: '/chat-page',
+      page: () =>  ChatPage(),
+      binding: ChatPageBinding(),
     ),
   ];
 }

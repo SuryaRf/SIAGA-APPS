@@ -28,7 +28,7 @@ class _NavigationBarViewState extends State<NavigationBarView> {
     super.initState();
     items = [
       NavModel(page: const HomeView(), navKey: homeNavKey),
-      NavModel(page: const ComunittyView(), navKey: searchNavKey),
+      NavModel(page:  ComunittyView(), navKey: searchNavKey),
       NavModel(page: const EducationView(), navKey: notificationNavKey),
       NavModel(page: const ProfileView(), navKey: profileNavKey),
     ];
