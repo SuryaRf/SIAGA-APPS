@@ -18,15 +18,29 @@ class HomeView extends GetView<HomeController> {
     // Example notification count (can be dynamic, fetched from controller)
     int notificationCount = 5;
 
+    // Create a state for the active index in the Carousel
+    final RxInt _current = 0.obs;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+               Container(
+          
+                width: width, 
+                height: 15,
+                decoration: BoxDecoration(
+                  color: Colors.pinkAccent, // Change this to your desired color
+                  borderRadius: BorderRadius.vertical(
+                    bottom: Radius.circular(10),
+                  ),
+                ),
+              ),
               Padding(
                 padding:
-                    EdgeInsets.only(left: width * 0.03, top: height * 0.04),
+                    EdgeInsets.only(left: width * 0.03, top: height * 0.02),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -98,21 +112,48 @@ class HomeView extends GetView<HomeController> {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: CarouselSlider(
-                    options: CarouselOptions(
-                      height: 200.0,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 3),
-                      autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      aspectRatio: 2.0,
-                      viewportFraction: 0.8,
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        height: 180.0,
+                        enlargeCenterPage: true,
+                        autoPlay: true,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        aspectRatio: 2.0,
+                        viewportFraction: 0.8,
+                        onPageChanged: (index, reason) {
+                          _current.value = index;  // Update current index
+                        },
+                      ),
+                      items: items,  
                     ),
-                    items: items),
+                    // Dots below the Carousel
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: items.map((url) {
+                        int index = items.indexOf(url);
+                        return Obx(() => Container(
+                              width: 8.0,
+                              height: 8.0,
+                              margin: const EdgeInsets.only(
+                                  top: 10.0, left: 4.0, right: 4.0),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: _current.value == index
+                                    ? Colors.pinkAccent
+                                    : Colors.grey,
+                              ),
+                            ));
+                      }).toList(),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
-                height: height * 0.04,
+                height: height * 0.02,
               ),
               Padding(
                 padding: EdgeInsets.only(left: width * 0.06),

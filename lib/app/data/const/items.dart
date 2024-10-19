@@ -12,7 +12,7 @@ final items =[
                     ],
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                      image: AssetImage('assets/images/slide1.jpg'), // Replace with your image asset
+                      image: AssetImage('assets/banner/banner1.png'), // Replace with your image asset
                       fit: BoxFit.cover,
                       
                     ),
@@ -30,7 +30,7 @@ final items =[
                       )
                     ],
                     image: DecorationImage(
-                      image: AssetImage('assets/images/slide2.jpg'), // Replace with your image asset
+                      image: AssetImage('assets/banner/banner2.png'), // Replace with your image asset
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -46,7 +46,7 @@ final items =[
                       )
                     ],
                     image: DecorationImage(
-                      image: AssetImage('assets/images/slide3.jpg'), // Replace with your image asset
+                      image: AssetImage('assets/banner/banner3.png'), // Replace with your image asset
                       fit: BoxFit.cover,
                     ),
                   ),

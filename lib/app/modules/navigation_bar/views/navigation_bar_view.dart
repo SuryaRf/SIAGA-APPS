@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:siaga/app/modules/comunitty/views/comunitty_view.dart';
+import 'package:siaga/app/modules/consultation/views/consultation_view.dart';
 import 'package:siaga/app/modules/education/views/education_view.dart';
 import '../../../data/model/nav_bar.dart';
 import '../../../data/model/nav_model.dart';
@@ -67,9 +69,9 @@ class _NavigationBarViewState extends State<NavigationBarView> {
           child: FloatingActionButton(
             backgroundColor: Colors.white,
             elevation: 0,
-            onPressed: () => debugPrint("Add Button pressed"),
+            onPressed: () => Get.to(ConsultationView()),
             shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 3, color: Colors.pinkAccent),
+              side: const BorderSide(width: 3, color: Color(0xFFFF4081)),
               borderRadius: BorderRadius.circular(100),
             ),
             child: Padding(
