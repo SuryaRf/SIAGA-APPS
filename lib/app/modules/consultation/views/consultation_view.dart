@@ -117,7 +117,7 @@ void initState() {
       ChatMessage chatMessage = ChatMessage(
         user: currentUser,
         createdAt: DateTime.now(),
-        text: "Describe this picture",
+        text: "Deskripsikan gambar",
         medias: [
           ChatMedia(url: file.path, fileName: "", type: MediaType.image)
         ],

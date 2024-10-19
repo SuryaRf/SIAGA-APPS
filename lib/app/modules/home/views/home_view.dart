@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
 import 'package:siaga/app/data/const/font.dart';
 import 'package:siaga/app/data/const/items.dart';
+import 'package:siaga/app/modules/tracking_growth/views/tracking_growth_view.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -172,13 +173,16 @@ class HomeView extends GetView<HomeController> {
                   children: [
                     Column(
                       children: [
-                        Container(
-                          height: height * 0.1,
-                          width: width * 0.4,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              shape: BoxShape.rectangle,
-                              color: Colors.grey),
+                        GestureDetector(
+                          onTap: () => Get.to(const TrackingGrowthView()),
+                          child: Container(
+                            height: height * 0.1,
+                            width: width * 0.4,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                shape: BoxShape.rectangle,
+                                color: Colors.grey),
+                          ),
                         ),
                         SizedBox(
                           height: height * 0.01,

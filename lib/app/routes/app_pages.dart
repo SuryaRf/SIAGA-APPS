@@ -9,6 +9,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/navigation_bar/bindings/navigation_bar_binding.dart';
 import '../modules/navigation_bar/views/navigation_bar_view.dart';
+import '../modules/tracking_growth/bindings/tracking_growth_binding.dart';
+import '../modules/tracking_growth/views/tracking_growth_view.dart';
 
 part 'app_routes.dart';
 
@@ -37,6 +39,11 @@ class AppPages {
       name: _Paths.CONSULTATION,
       page: () => const ConsultationView(),
       binding: ConsultationBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRACKING_GROWTH,
+      page: () => const TrackingGrowthView(),
+      binding: TrackingGrowthBinding(),
     ),
   ];
 }

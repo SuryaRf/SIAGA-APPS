@@ -10,6 +10,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const CHAT_PAGE = _Paths.CHAT_PAGE;
   static const CONSULTATION = _Paths.CONSULTATION;
+  static const TRACKING_GROWTH = _Paths.TRACKING_GROWTH;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const CHAT_PAGE = '/chat-page';
   static const CONSULTATION = '/consultation';
+  static const TRACKING_GROWTH = '/tracking-growth';
 }
