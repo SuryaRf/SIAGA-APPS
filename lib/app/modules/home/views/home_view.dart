@@ -188,7 +188,7 @@ class HomeView extends GetView<HomeController> {
                           height: height * 0.01,
                         ),
                         Text(
-                          "Tracking Pertumbuhan",
+                          "Pantau Pertumbuhan",
                           style: small.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
